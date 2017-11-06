@@ -1,0 +1,18 @@
+[user]
+  email = mattdsegal@gmail.com
+  name = Matthew Segal
+[alias]
+  ch = checkout
+  c = commit -m
+  s = status
+  a = add *
+  b = branch
+[difftool "meld"]
+  prompt = false
+  cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+  tool = meld
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[push]
+  default = simple
