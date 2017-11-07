@@ -15,3 +15,8 @@ function github {
 
   chrome "$url"
 }
+
+function upstream {
+  branch="$(git rev-parse --abbrev-ref HEAD)"
+  git branch --set-upstream-to="origin/${branch}" "$branch"
+}
