@@ -5,7 +5,6 @@
   ch = checkout
   c = commit -m
   s = status
-  a = add *
   b = branch
 [difftool "meld"]
   prompt = false

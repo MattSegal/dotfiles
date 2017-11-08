@@ -1,0 +1,22 @@
+[global_config]
+  borderless = True
+  window_state = maximise
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#001419"
+    background_image = None
+    cursor_shape = ibeam
+    foreground_color = "#b4c4c6"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
