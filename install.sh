@@ -1,5 +1,7 @@
+apt update
+apt upgrade
 
-
+apt install curl
 
 # Add Sublime Text's GPG key to apt
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -21,7 +23,6 @@ add-apt-repository \
 add-apt-repository ppa:gnome3-team/gnome3
 
 apt update
-apt upgrade
 
 apt install terminator && \
 apt install sublime-text && \
