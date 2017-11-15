@@ -26,7 +26,7 @@ apt update
 
 apt install terminator && \
 apt install sublime-text && \
-apt install docker-ce && \
+apt install docker.io && \
 apt install chromium && \
 apt install shutter && \
 apt install gnome-shell ubuntu-gnome-desktop
