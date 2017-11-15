@@ -36,3 +36,7 @@ apt install gnome-shell ubuntu-gnome-desktop
 #COMPOSE_URL=https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m`
 #curl -L $COMPOSE_URL -o /usr/local/bin/docker-compose
 #chmod +x /usr/local/bin/docker-compose
+
+if [ ! -d ./bash-git-prompt ]; then
+  git clone https://github.com/magicmonty/bash-git-prompt.git bash-git-prompt --depth=1
+fi
