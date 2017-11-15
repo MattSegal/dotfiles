@@ -57,3 +57,11 @@ function manage {
       ;;
   esac
 }
+
+
+#  Notes
+#  aws ecr describe-repositories
+#  eval $(aws ecr get-login)
+#  docker pull $uri:$tag
+#  docker images
+#  docker run -i -t $image_id /bin/bash
