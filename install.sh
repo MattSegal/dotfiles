@@ -25,11 +25,13 @@
 apt update
 
 apt install terminator && \
+apt install meld && \
 apt install sublime-text && \
 apt install docker.io && \
 apt install chromium-browser && \
 apt install shutter && \
-apt install gnome-shell ubuntu-gnome-desktop
+apt install gnome-shell ubuntu-gnome-desktop && \
+apt install awscli
 
 
 # docker compose

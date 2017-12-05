@@ -1,5 +1,4 @@
 alias dc="docker-compose"
-alias chrome="/opt/google/chrome/google-chrome"
 
 function github {
   branch="$(git rev-parse --abbrev-ref HEAD)"
@@ -14,7 +13,7 @@ function github {
       ;;
   esac
 
-  chrome "$url"
+  chromium-browser "$url"
 }
 
 function upstream {
@@ -32,6 +31,7 @@ function manage {
       echo "  postgres      open Postgres CLI"
       echo "  lint          run linter"
       echo "  test          run tests"
+      echo "  shell         run shell_plus"
       echo "  *             pass args to manage.py"
       echo
       ;;
@@ -40,7 +40,7 @@ function manage {
       manage changepassword sdadmin
       ;;
     "wordpress") 
-      args="convert_wordpress --jsonurl http://catalysthunter.com/wp-json/wp/v2 --homepage 3"
+      args="convert_wordpress --jsonurl http://www.nextminingboom.com/wp-json/wp/v2 --homepage 3"
       eval "docker-compose run web ./manage.py $args"
       ;; 
     "postgres")
@@ -51,6 +51,9 @@ function manage {
       ;;
     "lint")
       docker-compose run web make lint-python
+      ;;
+    "shell")
+      docker-compose run web ./manage.py shell_plus
       ;;
     *)
       docker-compose run web ./manage.py "$@"
