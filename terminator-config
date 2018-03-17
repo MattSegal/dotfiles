@@ -14,7 +14,6 @@
 [profiles]
   [[default]]
     background_color = "#001419"
-    background_image = None
     cursor_shape = ibeam
     foreground_color = "#b4c4c6"
     scrollback_infinite = True
