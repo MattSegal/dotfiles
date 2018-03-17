@@ -1,6 +1,6 @@
 # Remove old stuff
-rm ~/.gitconfig
-rm ~/.bashrc
+rm -f ~/.gitconfig
+rm -f ~/.bashrc
 
 # Create symlinks
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
