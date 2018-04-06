@@ -77,11 +77,11 @@ function manage {
       case "$2" in
         "prod")
           echo "Rolling back prod to '${3}'"
-          ~/code/scripts/rollback-prod.sh "$3"
+          ~/code/scripts/deploy/rollback-prod.sh "$3"
           ;;
         "staging")
           echo "Rolling back staging to '${3}'"
-          ~/code/scripts/rollback-staging.sh "$3"
+          ~/code/scripts/deploy/rollback-staging.sh "$3"
           ;;
         *)
           echo "No environment specified for rollback."
@@ -90,10 +90,10 @@ function manage {
       esac
       ;;
     "fetch")
-      ~/code/scripts/fetch-prod.sh
+      ~/code/scripts/backups/fetch-prod.sh
       ;;
     "restore")
-      ~/code/scripts/restore-local.sh
+      ~/code/scripts/backups/restore-local.sh
       ;;
     "postgres")
       psql --host=0.0.0.0 --port=25432 --username=postgres
@@ -121,25 +121,4 @@ function manage {
       docker-compose run web ./manage.py "$@"
       ;;
   esac
-}
-
-
-#  Notes
-# FOO=($(docker ps | grep '\-web\-'));docker exec -it $FOO /bin/bash
-#  aws ecr describe-repositories
-#  eval $(aws ecr get-login)
-#  docker pull $uri:$tag
-#  docker images
-#  docker run -i -t $image_id /bin/bash
-
-
-function loaddata {
-  # throwaway for finfeed work
-  echo -e 'yes\n' | manage reset_db && \
-  manage migrate && \
-  manage load_template_data && \
-  manage load_test_data --unsplash 50 && \
-  manage sitedata_to_wagtail_sites && \
-  echo -ne 'z\nz\n' | manage changepassword sdadmin
-  echo -ne 'z=User.objects.get(username="sdadmin");z.is_active=True;z.save()' | manage shell
 }
