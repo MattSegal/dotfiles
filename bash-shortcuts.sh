@@ -77,11 +77,11 @@ function manage {
       case "$2" in
         "prod")
           echo "Rolling back prod to '${3}'"
-          ~/code/scripts/deploy/rollback-prod.sh "$3"
+          $SCRIPTS_DIR/deploy/rollback-prod.sh "$3"
           ;;
         "staging")
           echo "Rolling back staging to '${3}'"
-          ~/code/scripts/deploy/rollback-staging.sh "$3"
+          $SCRIPTS_DIR/deploy/rollback-staging.sh "$3"
           ;;
         *)
           echo "No environment specified for rollback."
@@ -90,10 +90,10 @@ function manage {
       esac
       ;;
     "fetch")
-      ~/code/scripts/backups/fetch-prod.sh
+      $SCRIPTS_DIR/backups/fetch-prod.sh
       ;;
     "restore")
-      ~/code/scripts/backups/restore-local.sh
+      $SCRIPTS_DIR/backups/restore-local.sh
       ;;
     "postgres")
       psql --host=0.0.0.0 --port=25432 --username=postgres

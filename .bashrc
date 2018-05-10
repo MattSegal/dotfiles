@@ -6,3 +6,6 @@ export PS1="\u \W > \[$(tput sgr0)\]"
 . ~/dotfiles/bash-git-prompt/gitprompt.sh
 . ~/dotfiles/git-completion.bash
 
+function wc3 {
+	wine /home/matt/.wine/drive_c/Program\ Files\ \(x86\)/Warcraft\ III/Warcraft\ III.exe
+}
