@@ -3,6 +3,22 @@
 alias dc="docker-compose"
 alias python=python3
 
+export ESDEE_DIR='/home/matt/work/scripts/esdee'
+function esdee {
+  $ESDEE_DIR/esdee $@
+}
+
+function fuck_docker {
+  # stop all containers:
+  docker kill $(docker ps -q)
+
+  # remove all containers
+  docker rm $(docker ps -a -q)
+
+  # remove all docker images
+  docker rmi $(docker images -q)
+}
+
 function github {
   branch="$(git rev-parse --abbrev-ref HEAD)"
   repo="$(git remote -v | cut -d ':' -f 2 | cut -d '.' -f 1 | head -1)"
@@ -101,10 +117,10 @@ function manage {
     "test")
       case "$2" in
         "")
-          docker-compose run web make test
+          docker-compose run test make test
           ;;
         *)
-          docker-compose run web pytest -s $2
+          docker-compose run test pytest -s $2
         ;;
       esac
       ;;
@@ -112,7 +128,10 @@ function manage {
       docker-compose run web make lint
       ;;
     "isort")
-      docker-compose run web isort --skip migrations --skip node_modules
+      docker-compose run web isort \
+        --skip migrations \
+        --skip node_modules \
+        --skip src
       ;;
     "shell")
       docker-compose run web ./manage.py shell_plus
