@@ -3,9 +3,14 @@
 alias dc="docker-compose"
 alias python=python3
 
+<<<<<<< HEAD
 function stopdocker {
     docker update --restart=no `docker ps -q`
     docker kill `docker ps -q`
+=======
+export ESDEE_DIR='/home/matt/work/scripts/esdee'
+function esdee {
+  $ESDEE_DIR/esdee $@
 }
 
 function fuck_docker {
@@ -17,6 +22,7 @@ function fuck_docker {
 
   # remove all docker images
   docker rmi $(docker images -q)
+>>>>>>> 3456886d17f89006d141b66e00d584ebc9778971
 }
 
 function github {
