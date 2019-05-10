@@ -3,6 +3,11 @@
 alias dc="docker-compose"
 alias python=python3
 
+function stopdocker {
+    docker update --restart=no `docker ps -q`
+    docker kill `docker ps -q`
+}
+
 function github {
   branch="$(git rev-parse --abbrev-ref HEAD)"
   repo="$(git remote -v | cut -d ':' -f 2 | cut -d '.' -f 1 | head -1)"
