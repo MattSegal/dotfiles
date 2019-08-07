@@ -17,6 +17,9 @@ function fuck_docker {
 
   # remove all docker images
   docker rmi $(docker images -q)
+
+  # remove all volumes
+  docker volume rm $(docker volume ls -q)
 }
 
 function github {
