@@ -28,4 +28,4 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-PATH=$PATH:~/.poetry/env
+PATH=$PATH:~/.poetry/env:/opt/flutter/bin:
