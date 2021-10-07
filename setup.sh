@@ -1,9 +1,11 @@
 echo "Removing old dotfiles"
 rm -f ~/.gitconfig
+rm -f ~/.gitignore
 rm -f ~/.bashrc
 
 echo "Create symlinks to dotfiles"
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.gitignore.global ~/.gitignore
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 
 if [[ ! -z "$(which terminator)" ]]
