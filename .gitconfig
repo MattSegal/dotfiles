@@ -15,3 +15,6 @@
   cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [push]
   default = simple
+
+[core]
+  excludesfile = ~/.gitignore
