@@ -29,6 +29,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+bind 'TAB':menu-complete
 
 # Shortcuts
 function stopdocker {
@@ -54,9 +55,9 @@ function cleandocker {
 . ~/dotfiles/bash-git-prompt/gitprompt.sh
 . ~/dotfiles/git-completion.bash
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Do Path stuff here
+# Do Path stuff in local file
 # export PATH=$PATH:/opt/flutter/bin
+if [[ -e ~/dotfiles/local.secret.sh ]]
+then
+  . ~/dotfiles/local.secret.sh
+fi

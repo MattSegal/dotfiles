@@ -2,6 +2,7 @@
 
 My terminal / git config files.
 
+Add local.secret.sh to add local bashrc config
 
 
 Run 
