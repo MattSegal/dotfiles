@@ -29,7 +29,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-bind 'TAB':menu-complete
+# bind 'TAB':menu-complete
 
 # Shortcuts
 function stopdocker {
