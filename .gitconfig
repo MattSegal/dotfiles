@@ -1,9 +1,10 @@
 [user]
-  email = mattdsegal@gmail.com
+  email = matt.segal@biarri.com
   name = Matthew Segal
 [alias]
   ch = checkout
   c = commit -m
+  cnv = commit --no-verify -m
   s = status
   b = branch
 [difftool "meld"]
